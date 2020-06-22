@@ -1,0 +1,115 @@
+ body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+
+#detail-page{
+    visibility: hidden;
+    opacity: 0;
+    transform: scale(0.5);
+    transition: transform 0.2s, opacity 0.2s, visibility 0s 0.2s;
+}
+
+.char-wrapper {
+     transition: all .2s ease-in-out; 
+}
+
+.char-wrapper:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.devider-title{
+    padding: 15px 0;
+}
+
+.detail-title{
+    padding-bottom: 8px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#modded .progress {
+  min-height: 36px;
+  overflow: hidden;
+  position: relative;
+}
+
+#modded .progress span {
+  position: relative;
+  float: left;
+  color: #fff;
+  padding: 8px;
+  z-index: 99999;
+}
+
+#modded .progress .determinate {
+  width: 0;
+  -webkit-transition: width 1s ease-in-out;
+  transition: width 1s ease-in-out;
+  padding: 8px;
+  position: relative;
+  color: #fff;
+  text-align: right;
+  white-space: nowrap;
+}
+
+#mobile-demo p {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+    padding: 2px 0;
+}
+
+#top-button {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 20px; /* Place the button at the bottom of the page */
+  right: 30px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: #ff1744; /* Set a background color */
+  color: white; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 15px 18px; /* Some padding */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 18px; /* Increase font size */
+}
+
+#top-button:hover {
+  background-color: #555; /* Add a dark-grey background on hover */
+}
+
+#about-section h6{
+  padding-top: 20px;
+}
+
+#about-section ul li{
+  list-style-type: circle !important;
+      text-indent: 3em;
+}
+
+#history-section{
+  padding: 20px 0;
+  height: 100%;
+}
+
+#history-section img{
+  width:100%;
+}
+
+#img-title{
+  padding-bottom: 50px
+}
+
+#history-section p{
+  text-indent: 50px;
+  margin-bottom: 20px;
+}

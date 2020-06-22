@@ -1,0 +1,82 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="./public/lib/materialize/css/materialize.min.css"
+        media="screen,projection" />
+    <link rel="stylesheet" href="./public/assets/css/style.css" />
+    <title>Pokemon World</title>
+</head>
+
+<body>
+
+    <nav>
+        <div class="container">
+
+            <div class="nav-wrapper">
+                <a href="/src" class="brand-logo">PokeWorld</a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a onclick="toHome()">Home</a></li>
+                    <li><a onclick="toHistory()">History</a></li>
+                    <li><a onclick="toAbout()">About</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </nav>
+
+    <div class="sidenav" id="mobile-demo">
+        <p>Menu</p>
+        <hr>
+        <ul>
+            <li><a onclick="toHome()">Home</a></li>
+            <li><a onclick="toHistory()">History</a></li>
+            <li><a onclick="toAbout()">About</a></li>
+        </ul>
+    </div>
+    <main>
+        <div class="container">
+            <!-- Page Content goes here -->
+            <div class="content-wrapper" style="margin-top: 20px;"></div>
+        </div>
+    </main>
+    <footer class="page-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col l12 s12">
+                    © 2020
+                    <a class="grey-text text-lighten-4 right" href="#!">Pokemon World</a>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+    <button onclick="topFunction()" id="top-button" title="Go to top"><i
+            class="material-icons">keyboard_arrow_up</i></button>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./public/lib/materialize/js/materialize.min.js"></script>
+    <script type="text/javascript" src="../src/public/assets/js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.sidenav');
+            var instances = M.Sidenav.init(elems);
+        });
+
+        // Or with jQuery
+
+        $(document).ready(function () {
+            // $('.sidenav').sidenav();
+            $('.sidenav')
+                .sidenav()
+                .on('click tap', 'li a', () => {
+                    $('.sidenav').sidenav('close');
+                });
+        });
+    </script>
+</body>
+
+</html>
