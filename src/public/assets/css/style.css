@@ -59,6 +59,26 @@
   white-space: nowrap;
 }
 
+.char-wrapper .card-content{
+  text-align: center;
+  background-color:#81c784 ;
+  padding: 2px;
+}
+
+.char-name .card-content{
+  margin: 0;
+}
+
+.char-wrapper-detil .card-content{
+  text-align: center;
+  background-color:#81c784 ;
+  padding: 2px;
+}
+
+.char-name-detil .card-content{
+  margin: 0;
+}
+
 #mobile-demo p {
     text-align: center;
     font-size: 24px;
@@ -75,7 +95,7 @@
   z-index: 99; /* Make sure it does not overlap */
   border: none; /* Remove borders */
   outline: none; /* Remove outline */
-  background-color: #ff1744; /* Set a background color */
+  background-color: #43a047; /* Set a background color */
   color: white; /* Text color */
   cursor: pointer; /* Add a mouse pointer on hover */
   padding: 15px 18px; /* Some padding */
@@ -84,7 +104,7 @@
 }
 
 #top-button:hover {
-  background-color: #555; /* Add a dark-grey background on hover */
+  background-color: #2e7d32; /* Add a dark-grey background on hover */
 }
 
 #about-section h6{

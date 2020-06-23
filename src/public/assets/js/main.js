@@ -1,5 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
     homeData();
+
+    var selector = '.nav-wrapper ul li';
+
+    $(selector).on('click', function () {
+        $(selector).removeClass('active');
+        $(this).addClass('active');
+    });
 });
 
 toPokemonDetil = async (url) => {
@@ -47,9 +54,9 @@ toPokemonDetil = async (url) => {
                     <div class="card-image">
                         <img style="padding: 5px;" src="https://pokeres.bastionbot.org/images/pokemon/${data.id}.png">
                     </div>
-                    <div class="card-content" style="text-align: center; background-color: darkgrey; padding: 2px;">
-                        <p style="margin: 0;"><strong>${data.name.toUpperCase()}</strong></p>
-                        <p style="margin: 0;">At Level ${data.level}</p>
+                    <div class="card-content">
+                        <p><strong>${data.name.toUpperCase()}</strong></p>
+                        <p>At Level ${data.level}</p>
                     </div>
                 </div>
             </div>
@@ -75,9 +82,9 @@ toPokemonDetil = async (url) => {
     let statsList = "";
     statsList += '<div id="modded">';
     data.stats.forEach(stats => {
-        statsList += `<div class="progress blue lighten-4">
+        statsList += `<div class="progress green lighten-4">
                     <span>${stats.stat.name.toUpperCase()}</span>
-                    <div class="determinate blue" style="width: ${Math.floor((stats.base_stat / 175) * 100)}%; animation: grow 2s;">${stats.base_stat}</div>
+                    <div class="determinate green" style="width: ${Math.floor((stats.base_stat / 175) * 100)}%; animation: grow 2s;">${stats.base_stat}</div>
                 </div>`;
     })
     statsList += '</div>'
@@ -85,14 +92,14 @@ toPokemonDetil = async (url) => {
     var content = document.querySelector(".content-wrapper");
     content.innerHTML = ` <div class="row" id="detail-page">
             <div class="col m12">
-                <a class="waves-effect waves-teal btn-flat" onclick="toHome()"><i class="material-icons left">arrow_back</i>Back</a>
+                <a class="waves-effect waves-green btn-flat" onclick="toHome()"><i class="material-icons left">arrow_back</i>Back</a>
             </div>
-            <div class="col s12 m5">
+            <div class="col s12 m5 char-wrapper-detil">
                 <div class="card">
                     <div class="card-image">
                         <img style="padding: 10px;" src="https://pokeres.bastionbot.org/images/pokemon/${pokemonId[6]}.png">
                     </div>
-                    <div class="card-content" style="text-align: center; background-color: darkgrey; padding: 2px;">
+                    <div class="card-content">
                         <p style="margin: 10px;"> <strong> ${dataSpecies.name.toUpperCase()} </strong> </p>
                     </div>
                 </div>
@@ -187,7 +194,7 @@ toAbout = () => {
                                 <a href="https://materializecss.com/" target="_blank">Materialize, as CSS Framwork</a>
                             </li>
                             <li> <a href="https://pokeapi.co/" target="_blank">PokeAPI, for Pokemon data</a> </li>
-                            <li>  <a href="https://pokeapi.co/" target="_blank">pokeres-bastianbot for Pokemon images</a>  </li>
+                            <li>  <a href="https://pokeres.bastionbot.org/" target="_blank">pokeres-bastianbot for Pokemon images</a>  </li>
                         </ul>
                     </p>
 
@@ -227,10 +234,9 @@ toHistory = () => {
                                     The following list details the 151 Pokémon of Generation I in order of their National Pokédex number. The first Pokémon, Bulbasaur, is number 001 and the last, Mew, is number 151. Alternate forms that result in type changes are included for convenience. Mega evolutions and regional forms are included on the pages for the generation in which they were introduced.
                                 </p>
                                     <strong> Source : <strong><br/>
-                                      <a href="https://materializecss.com/" target="_blank">Wikipedia</a> <br/>
-                                      <a href="https://materializecss.com/" target="_blank">Pokemon Images</a> <br/>
-                                      <a href="https://materializecss.com/" target="_blank">Squirtle, Bulbasaur and Charmander Images</a> <br/>
-
+                                      <a href="https://en.wikipedia.org/wiki/List_of_generation_I_Pok%C3%A9mon#:~:text=The%20first%20Pok%C3%A9mon%2C%20Bulbasaur%2C%20is,in%20which%20they%20were%20introduced." target="_blank">Wikipedia</a> <br/>
+                                      <a href="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/1280px-International_Pok%C3%A9mon_logo.svg.png" target="_blank">Pokemon Images</a> <br/>
+                                      <a href="https://goombastomp.com/wp-content/uploads/2016/02/gen-1-starters-540x308.png" target="_blank">Squirtle, Bulbasaur and Charmander Images</a> <br/>
                                 <p>
                             </div>
                         </div>
@@ -259,8 +265,8 @@ homeData = async () => {
                                 <div class="card-image">
                                     <img style="padding: 5px;" src="https://pokeres.bastionbot.org/images/pokemon/${pokemonId[6]}.png">
                                 </div>
-                                <div class="card-content" style="text-align: center; background-color: darkgrey; padding: 2px;">
-                                    <p style="margin: 0;"><strong>${pokemon.name.toUpperCase()}</strong></p>
+                                <div class="card-content">
+                                    <p><strong>${pokemon.name.toUpperCase()}</strong></p>
                                 </div>
                             </div>
                         </div>`;
