@@ -222,8 +222,8 @@ toHistory = () => {
                         <hr>
                         <div id="history-section" class="row">
                             <div class="col s12 m6 l6">
-                                    <img src="./public/images/pokemon.png" id="img-title">
-                                    <img src="./public/images/first-generation.png">
+                                    <img src="./src/public/images/pokemon.png" id="img-title">
+                                    <img src="./src/public/images/first-generation.png">
                             </div>
                             <div class="col s12 m6 l6">
                                 <p>

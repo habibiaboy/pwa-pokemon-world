@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link type="text/css" rel="stylesheet" href="./public/lib/materialize/css/materialize.min.css"
+    <link href="./src/public/assets/css/font-material-google.css" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="./src/public/lib/materialize/css/materialize.min.css"
         media="screen,projection" />
-    <link rel="stylesheet" href="./public/assets/css/style.css" />
+    <link rel="stylesheet" href="./src/public/assets/css/style.css" />
     <title>Pokemon World</title>
-    <link rel="icon" href="./public/images/icon/favicon.ico" type="image/gif" sizes="16x16">
+    <link rel="icon" href="./src/public/images/icon/favicon.ico" type="image/gif" sizes="16x16">
 </head>
 
 <body>
@@ -17,7 +17,7 @@
         <div class="container">
 
             <div class="nav-wrapper">
-                <a href="/src" class="brand-logo">PokeWorld</a>
+                <a onclick="toHome()" class="brand-logo">PokeWorld</a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down">
                     <li><a onclick="toHome()">Home</a></li>
@@ -57,10 +57,9 @@
     </footer>
     <button onclick="topFunction()" id="top-button" title="Go to top"><i
             class="material-icons">keyboard_arrow_up</i></button>
-    <script src="https://code.jquery.com/jquery-3.5.1.js"
-        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="./public/lib/materialize/js/materialize.min.js"></script>
-    <script type="text/javascript" src="../src/public/assets/js/main.js"></script>
+    <script src="./src/public/assets/js/jquery-3.5.1.js"></script>
+    <script type="text/javascript" src="./src/public/lib/materialize/js/materialize.min.js"></script>
+    <script type="text/javascript" src="./src/public/assets/js/main.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             var elems = document.querySelectorAll('.sidenav');
@@ -77,6 +76,24 @@
                     $('.sidenav').sidenav('close');
                 });
         });
+    </script>
+    <script>
+        // REGISTER SERVICE WORKER
+        if ("serviceWorker" in navigator) {
+            window.addEventListener("load", function () {
+                navigator.serviceWorker
+                    .register("../service-worker.js")
+                    .then(function () {
+                        console.log("Pendaftaran ServiceWorker berhasil");
+                    })
+                    .catch(function (err) {
+                        console.log(err);
+                        console.log("Pendaftaran ServiceWorker gagal");
+                    });
+            });
+        } else {
+            console.log("ServiceWorker belum didukung browser ini.");
+        }
     </script>
 </body>
 
