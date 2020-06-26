@@ -59,25 +59,9 @@
             class="material-icons">keyboard_arrow_up</i></button>
     <script src="./src/public/assets/js/jquery-3.5.1.js"></script>
     <script type="text/javascript" src="./src/public/lib/materialize/js/materialize.min.js"></script>
-    <script type="text/javascript" src="./src/public/assets/js/main.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var elems = document.querySelectorAll('.sidenav');
-            var instances = M.Sidenav.init(elems);
-        });
-
-        // Or with jQuery
-
-        $(document).ready(function () {
-            // $('.sidenav').sidenav();
-            $('.sidenav')
-                .sidenav()
-                .on('click tap', 'li a', () => {
-                    $('.sidenav').sidenav('close');
-                });
-        });
-    </script>
-    <script>
+    <script src="./src/public/assets/js/main.js" type="module"></script>
+    <script type="text/javascript" src="./src/public/assets/js/sw-registary.js"></script>
+    <!-- <script>
         // REGISTER SERVICE WORKER
         if ("serviceWorker" in navigator) {
             window.addEventListener("load", function () {
@@ -94,7 +78,7 @@
         } else {
             console.log("ServiceWorker belum didukung browser ini.");
         }
-    </script>
+    </script> -->
 </body>
 
 </html>

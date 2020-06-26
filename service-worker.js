@@ -1,4 +1,4 @@
-const CACHE_NAME = "pokeworld-v6";
+const CACHE_NAME = "pokeworld-v1";
 var urlsToCache = [
     "/",
     "/index.html",
@@ -13,6 +13,9 @@ var urlsToCache = [
     "/src/public/lib/materialize/js/materialize.min.js",
     "/src/public/assets/js/jquery-3.5.1.js",
     "/src/public/assets/js/main.js",
+    "/src/public/controller/pokemonController.js",
+    "/src/public/model/pokemonModel.js",
+    "/src/public/helper/fetch.js",
 ];
 
 self.addEventListener("install", function (event) {
@@ -31,18 +34,18 @@ self.addEventListener("fetch", function (event) {
             .match(event.request, { cacheName: CACHE_NAME })
             .then(function (response) {
                 if (response) {
-                    console.log("ServiceWorker: Gunakan aset dari cache: ", response.url);
+                    // console.log("ServiceWorker: Gunakan aset dari cache: ", response.url);
                     return response;
                 }
 
-                console.log(
-                    "ServiceWorker: Memuat aset dari server: ",
-                    event.request.url
-                );
+                // console.log(
+                //     "ServiceWorker: Memuat aset dari server: ",
+                //     event.request.url
+                // );
                 return fetch(event.request);
             })
             .catch((err) => {
-                console.log('error catch')
+                console.log('error-catch')
             })
     );
 });
