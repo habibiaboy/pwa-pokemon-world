@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="./src/public/assets/css/style.css" />
     <title>Pokemon World</title>
     <link rel="icon" href="./src/public/images/icon/favicon.ico" type="image/gif" sizes="16x16">
+    <link rel="manifest" href="./manifest.json">
+    <meta name="theme-color" content="#0081d6" />
 </head>
 
 <body>
@@ -61,24 +63,6 @@
     <script type="text/javascript" src="./src/public/lib/materialize/js/materialize.min.js"></script>
     <script src="./src/public/assets/js/main.js" type="module"></script>
     <script type="text/javascript" src="./src/public/assets/js/sw-registary.js"></script>
-    <!-- <script>
-        // REGISTER SERVICE WORKER
-        if ("serviceWorker" in navigator) {
-            window.addEventListener("load", function () {
-                navigator.serviceWorker
-                    .register("../service-worker.js")
-                    .then(function () {
-                        console.log("Pendaftaran ServiceWorker berhasil");
-                    })
-                    .catch(function (err) {
-                        console.log(err);
-                        console.log("Pendaftaran ServiceWorker gagal");
-                    });
-            });
-        } else {
-            console.log("ServiceWorker belum didukung browser ini.");
-        }
-    </script> -->
 </body>
 
 </html>

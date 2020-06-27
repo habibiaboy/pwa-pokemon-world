@@ -2,8 +2,8 @@ import pokemonController from "../../controller/pokemonController.js"
 
 const CONTENT_SECTION = document.querySelector(".content-wrapper");
 
-document.addEventListener('DOMContentLoaded', () => {
-    homeData();
+document.addEventListener('DOMContentLoaded', async () => {
+    await homeData();
     toTop();
     setNavbar();
 });

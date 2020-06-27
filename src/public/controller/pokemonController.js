@@ -123,7 +123,7 @@ async function dataPokemonDetail(url) {
         let pokemonType = getPokemonType(pokemonProfile.types)
         let pokemonAbilities = getPokemonAbilities(pokemonProfile.abilities);
         let pokemonStats = getPokemonStats(pokemonProfile.stats);
-        let pokemonEvolution = getPokemonEvolution(pokemonSpecies.evolution_chain.url);
+        let pokemonEvolution = await getPokemonEvolution(pokemonSpecies.evolution_chain.url);
 
         let detilPage = ` <div class="row" id="detail-page">
             <div class="col m12">
